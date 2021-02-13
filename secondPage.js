@@ -1,28 +1,21 @@
 const baseAlbumUrl = "https://theaudiodb.com/api/v1/json/1/"
-
 const getAlbumName = () => {
     return localStorage.getItem("albumName");
 }
 
-const getSearchValue = () => {
-    return localStorage.getItem("searchValue");
+const getAlbumId = () => {
+    return localStorage.getItem("albumId");
 }
 
 const getAlbumsData = () => {
-    const albumUrl = baseAlbumUrl + "searchalbum.php?s=" + getSearchValue() + "&a=" + getAlbumName()
+    const albumUrl = baseAlbumUrl + "album.php?m=" + getAlbumId();
     console.log(albumUrl)
     fetch(albumUrl)
         .then(function (response) {
             return response.json();
         })
         .then(function (myJson) {
-            console.log(myJson, "noviapi")
-            // let albums = document.querySelector(".albums")
-            // albums.innerHTML = ""
-            // myJson.album.forEach(element => {
-            //     printAlbum(element);
-
-            // });
+            console.log(myJson, "noviapi")           
             printAlbumCover(myJson.album)
             printAlbumDescription(myJson.album)
             printYearReleased(myJson.album)
@@ -80,9 +73,7 @@ const getSongs = (albumId) => {
             console.log(myJson, "api")
             myJson.track.forEach(element => {
                 printSongs(element);
-
             });
-
         });
 
 }

@@ -27,9 +27,7 @@ const printArtist = () => {
         })
         .then(function (myJson) {
             console.log(myJson)
-            if (myJson.artists === null) {
-                // Uraditi nesto tipa, sakriti donji kontent, prikazati p sa obavestenjem
-                //  ( moze da se koristi toggle class )
+            if (myJson.artists === null) {                
             }
             let name = document.querySelector(".name")
             if (name) {
@@ -43,6 +41,8 @@ const printArtist = () => {
             if (paragraph) {
                 paragraph.remove()
             }
+            console.log(myJson.artists);
+            printAlbums(myJson.artists[0].idArtist);
             let albums = document.querySelector(".wrapper")
             console.log(albums, "za brisanje")
             if (albums) {
@@ -65,7 +65,6 @@ const setArtistId = (el) => {
 
 button.addEventListener('click', () => {
     printArtist();
-    printAlbums();
     search.value = ""
 
     searchContainer.classList = "searchButton"
@@ -75,7 +74,6 @@ button.addEventListener('click', () => {
 search.addEventListener('keypress', function (el) {
     if (el.keyCode === 13) {
         printArtist();
-        printAlbums();
         search.value = ""
 
         searchContainer.classList = "searchButton"
@@ -108,29 +106,25 @@ const printBio = (el) => {
     posterAndInfo.appendChild(paragraph)
 }
 
-const printAlbums = () => {
-    const albumstUrl = baseUrl + "discography.php?s=" + printTheInputValue()
+const printAlbums = (artistId) => {
+    const albumstUrl = baseUrl + "album.php?i=" + artistId;
     fetch(albumstUrl)
         .then(function (response) {
             return response.json();
         })
         .then(function (myJson) {
+            console.log("OVO SU ALBUMI", myJson);
             let albums = document.querySelector(".albums")
             albums.innerHTML = ""
             myJson.album.forEach(element => {
                 printAlbum(element);
-
             });
 
         });
 
 }
 
-const printAlbum = (el) => {
-    // let h2 = document.createElement("h2")
-    // albums.appendChild(h2)
-    // h2.textContent = "Albums"
-    // h2.classList = "h"
+const printAlbum = (el) => {   
     let oneAlbum = document.createElement("div")
     oneAlbum.classList = "oneAlbum"
     let albums = document.querySelector(".albums")
@@ -145,16 +139,13 @@ const printAlbum = (el) => {
     albums.appendChild(oneAlbum)
 
     albumName.addEventListener('click', () => {
-        console.log(albums);
-        storeAlbumIData(albumName.textContent)
+        storeAlbumID(el.idAlbum)
         window.location.href = "albumData.html";
     });
 }
 
-const storeAlbumIData = (albumName) => {
-    localStorage.setItem("albumName", albumName)
-    localStorage.setItem("searchValue", artistName)
-    console.log(artistName, "OVO JE ARTIST NAME");
+const storeAlbumID = (albumId) => {
+    localStorage.setItem("albumId", albumId)
 }
 
 const getVideos = () => {
