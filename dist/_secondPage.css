@@ -1,0 +1,22 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  background-image: url("./photo-1546707012-0c9f63ba29b9.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+}
+
+.containerTwo {
+  display: flex;
+  margin-top: 40px;
+}
+
+.same {
+  width: 25%;
+}
+.same img {
+  width: 100%;
+}

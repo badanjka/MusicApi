@@ -1,0 +1,90 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  background-image: url("./photo-1546707012-0c9f63ba29b9.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 80%;
+}
+.container .searchButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.container .search {
+  width: 465px;
+  height: 36px;
+  border-color: #09233e;
+  border-style: solid;
+}
+.container .searchMargin {
+  margin-top: 17%;
+}
+.container .button {
+  height: 42px;
+  margin-left: 2px;
+  padding-top: 8px;
+  width: 120px;
+  border-color: #09233e;
+}
+.container .button .fas {
+  width: 18px;
+  height: 18px;
+  color: #014c6c;
+}
+.container .button:hover {
+  transform: scale(1.05);
+}
+.container .posterAndInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container .posterAndInfo .name {
+  color: whitesmoke;
+}
+.container .posterAndInfo .image {
+  width: 60%;
+}
+.container .posterAndInfo .bio {
+  color: white;
+  background-color: rgba(16, 35, 37, 0.5);
+  padding: 50px;
+  font-size: 19px;
+  text-align: justify;
+}
+.container .albums {
+  color: white;
+  text-align: center;
+  font-size: 17px;
+}
+.container .albums .oneAlbum {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
+.container .albums .albumName:hover {
+  color: #6ad4e1;
+}
+.container .albums .year {
+  align-self: center;
+  margin-left: 12px;
+}
+.container .videos {
+  display: flex;
+  justify-content: space-between;
+}
+.container .video {
+  width: 30%;
+}

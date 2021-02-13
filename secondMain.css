@@ -1,0 +1,54 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  background-image: url("./guitar-3726729_960_720.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+  margin: 0px; }
+
+.containerTwo {
+  display: flex;
+  margin: 50px;
+  justify-content: space-evenly; }
+
+.cover {
+  width: 28%; }
+  .cover img {
+    width: 100%; }
+
+.data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 50px;
+  width: 40%;
+  color: white;
+  background-color: rgba(16, 35, 37, 0.5); }
+  .data .description {
+    text-align: justify; }
+  .data .songs {
+    text-align: center; }
+
+@media screen and (min-device-width: 321px) and (max-device-width: 768px) {
+  .containerTwo {
+    flex-direction: column;
+    align-items: center; }
+    .containerTwo .cover {
+      width: 45%;
+      margin-bottom: 15px; }
+    .containerTwo .data {
+      width: 90%; } }
+@media screen and (max-width: 320px) {
+  .containerTwo {
+    flex-direction: column;
+    margin: 10%; }
+    .containerTwo .cover {
+      width: 100%;
+      margin-bottom: 15px; }
+    .containerTwo .data {
+      width: 100%;
+      padding: 0px; } }
+
+/*# sourceMappingURL=secondMain.css.map */
