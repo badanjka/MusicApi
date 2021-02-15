@@ -4,14 +4,8 @@ const baseUrl = "https://theaudiodb.com/api/v1/json/1/"
 let artistId = 0;
 const searchContainer = document.querySelector(".searchButton")
 let artistName = '';
-// const resetVideos = () => {
-//     let videos = document.querySelectorAll('.video')
-//     videos.forEach((el) => {
-//         el.src = ''
-//     })
-// }
+let musicAppTittle = document.querySelector(".musicApp")
 
-// resetVideos()
 
 const printTheInputValue = () => {
     return search.value;
@@ -68,6 +62,7 @@ button.addEventListener('click', () => {
     search.value = ""
 
     searchContainer.classList = "searchButton"
+    musicAppTittle.classList="afterClick"
 
 });
 
@@ -77,6 +72,7 @@ search.addEventListener('keypress', function (el) {
         search.value = ""
 
         searchContainer.classList = "searchButton"
+        musicAppTittle.classList="afterClick"
     }
 })
 

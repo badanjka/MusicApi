@@ -16,13 +16,24 @@ body {
 .container {
     
     width: 80%;
+    .musicApp{
+        color: #7dbddc;
+        text-align: center;
+        font-size: 30px;
+        margin-top: 15%;
+    }
+    .afterClick{
+        color: #7dbddc;
+        text-align: center;
+        font-size: 30px;
+        margin-top: 30px;
+    }
 
     .searchButton {
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: center;
-        margin-top: 15px;
         margin-bottom: 15px;
     }
 
@@ -34,7 +45,7 @@ body {
     }
 
     .searchMargin {
-        margin-top: 17%;
+           margin-top: -1%;
     }
 
     .button {
@@ -43,6 +54,8 @@ body {
         padding-top: 8px;
         width: 120px;
         border-color: rgb(9, 35, 62);
+        background-color: #90bace;
+        border-radius: 7%;
 
         .fas {
             width: 18px;
